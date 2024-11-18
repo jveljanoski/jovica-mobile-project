@@ -1,5 +1,6 @@
 package com.companyname.app.utils;
 
+import com.companyname.app.pages.LoginPage;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +15,8 @@ import java.net.URL;
 public class AppiumDriver {
     public static io.appium.java_client.AppiumDriver<MobileElement> driver;
     public WebDriverWait wait;
+
+    public static LoginPage loginPage;
 
     public static String platformName() {
         return "android";
@@ -47,6 +50,8 @@ public class AppiumDriver {
             driver = new io.appium.java_client.AppiumDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
             wait = new WebDriverWait(driver, 120);
             context.setAttribute("driver", driver);
+
+            loginPage = new LoginPage(driver,wait);
         }
     }
 
