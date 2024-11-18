@@ -1,6 +1,7 @@
 package com.companyname.app.utils;
 
 import com.companyname.app.pages.LoginPage;
+import com.companyname.app.pages.SwipePage;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,6 +18,7 @@ public class AppiumDriver {
     public WebDriverWait wait;
 
     public static LoginPage loginPage;
+    public static SwipePage swipePage;
 
     public static String platformName() {
         return "android";
@@ -52,6 +54,7 @@ public class AppiumDriver {
             context.setAttribute("driver", driver);
 
             loginPage = new LoginPage(driver,wait);
+            swipePage = new SwipePage(driver,wait);
         }
     }
 

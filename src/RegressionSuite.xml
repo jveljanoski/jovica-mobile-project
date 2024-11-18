@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression">
+    <listeners>
+        <listener class-name="com.companyname.app.utils.Listeners" />
+    </listeners>
+    <test name="Mobile Test Automation" >
+        <classes>
+            <class name="com.companyname.app.tests.LoginTest">
+                <methods >
+                    <include name="testClickLogin"></include>
+                    <include name="testOpenSignUpForm"></include>
+                    <include name="testEnterEmail"></include>
+                    <include name="testEnterPassword"></include>
+                    <include name="testConfirmPassword"></include>
+                    <include name="testCompleteSignUp"></include>
+                    <include name="testClickSignUpOKButton"></include>
+                </methods>
+            </class>
+            <class name="com.companyname.app.tests.SwipeTest">
+                <methods >
+                    <include name="testClickSwipe"></include>
+                    <include name="testSwipeRightWithTouchAction"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
